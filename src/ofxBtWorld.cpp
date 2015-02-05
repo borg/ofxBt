@@ -243,3 +243,10 @@ bool World::ContactProcessedCallback(btManifoldPoint& manifold, void* object0, v
 	
 	return true;
 }
+
+btHingeConstraint* World::addHingeConstraint(RigidBody& rb,const ofVec3f& pivotInA,const ofVec3f& axisInA, bool useReferenceFrameA)
+{
+    btHingeConstraint* hingeConstraint = new btHingeConstraint(*rb, toBt(pivotInA), toBt(axisInA), useReferenceFrameA);
+    m_dynamicsWorld->addConstraint(hingeConstraint);
+    return hingeConstraint;
+}

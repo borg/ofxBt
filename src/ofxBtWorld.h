@@ -58,6 +58,7 @@ public:
 	void removeRigidBody(btRigidBody* body);
 	
 	//
+    btHingeConstraint* addHingeConstraint(RigidBody& rb,const ofVec3f& pivotInA,const ofVec3f& axisInA, bool useReferenceFrameA = false);
 
 protected:
 	
